@@ -1,7 +1,3 @@
-<!-- Ultimate Game Stash file--> 
-<!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
-<!--this is a game where you build a creature and watch it evolve. Uses jsdelivr--!>
-
 <!DOCTYPE html>
 <html lang="en-us">
 <base href="https://cdn.jsdelivr.net/gh/Stinkalistic/UGS@main/UNITY/Evolution/">
@@ -9,30 +5,27 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Evolution</title>
+    <style>
+      /* This ensures the body and html take up the full screen */
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; /* Prevents scrollbars if the game is full screen */
+      }
+      /* This makes the container fill the entire browser window */
+      #gameContainer {
+        width: 100vw; 
+        height: 100vh;
+      }
+    </style>
     <script src="Build/UnityLoader.js"></script>
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Evolution.json");
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* Hide scroll bars */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
-}
-canvas {
-  width: 100%;
-  height: 100%;
-  /* Optional: add max-width and max-height to maintain a general aspect ratio as a fallback */
-  max-width: [your-desired-max-width]px;
-  max-height: [your-desired-max-height]px;
-}
-
     </script>
   </head>
   <body>
-    <div id="gameContainer" style="width: 960px; height: 600px; margin: auto"></div>
+    <div id="gameContainer"></div>
   </body>
 </html>
