@@ -1,3 +1,7 @@
+<!-- Ultimate Game Stash file--> 
+<!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
+<!--this is a game where you build a creature and watch it evolve. Uses jsdelivr--!>
+
 <!DOCTYPE html>
 <html lang="en-us">
 <base href="https://cdn.jsdelivr.net/gh/Stinkalistic/UGS@main/UNITY/Evolution/">
@@ -5,73 +9,13 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Evolution</title>
-    <style>
-      /* This ensures the body and html take up the full screen */
-      html, body {
-        // Define your game's intended base resolution
-const BASE_WIDTH = 800;
-const BASE_HEIGHT = 600;
-const ASPECT_RATIO = BASE_WIDTH / BASE_HEIGHT;
-
-const canvas = document.getElementById('gameCanvas'); // Get your canvas element
-const ctx = canvas.getContext('2d');
-
-function resizeGame() {
-    const currentWindowWidth = window.innerWidth;
-    const currentWindowHeight = window.innerHeight;
-    const currentWindowAspectRatio = currentWindowWidth / currentWindowHeight;
-
-    let newCanvasWidth;
-    let newCanvasHeight;
-
-    if (currentWindowAspectRatio > ASPECT_RATIO) {
-        // Window is wider than game aspect ratio, match height and adjust width
-        newCanvasHeight = currentWindowHeight;
-        newCanvasWidth = newCanvasHeight * ASPECT_RATIO;
-    } else {
-        // Window is taller than game aspect ratio, match width and adjust height
-        newCanvasWidth = currentWindowWidth;
-        newCanvasHeight = newCanvasWidth / ASPECT_RATIO;
-    }
-
-    // Set the canvas CSS display size
-    canvas.style.width = newCanvasWidth + 'px';
-    canvas.style.height = newCanvasHeight + 'px';
-
-    // Set the actual canvas drawing buffer size (for high-DPI screens if needed)
-    canvas.width = BASE_WIDTH;
-    canvas.height = BASE_HEIGHT;
-    
-    // Note: You may need to scale your game's internal coordinates and elements using 
-    // ctx.scale() or by adjusting the positions based on the new dimensions.
-}
-
-// Initial resize on load
-window.addEventListener('load', resizeGame);
-// Update size when the window is resized
-window.addEventListener('resize', resizeGame);
-
-// Implement a basic debounce function
-let resizeTimeout;
-window.addEventListener('resize', function() {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(resizeGame, 100);
-});
-
-        overflow: hidden; /* Prevents scrollbars if the game is full screen */
-      }
-      /* This makes the container fill the entire browser window */
-      #gameContainer {
-        width: 100vw; 
-        height: 100vh;
-      }
-    </style>
     <script src="Build/UnityLoader.js"></script>
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Evolution.json");
     </script>
   </head>
   <body>
-    <div id="gameContainer"></div>
+    <div id="gameContainer" style="width: 960px; height: 600px; margin: auto"></div>
   </body>
 </html>
+
